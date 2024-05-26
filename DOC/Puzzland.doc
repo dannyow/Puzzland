@@ -1,0 +1,236 @@
+@database "Puzzland.doc"
+
+@NODE MAIN "Menu"
+
+                 PUZZLAND v2.0 by Daniel "Valar" Owsiaïski
+
+                             @{"Ekran gîówny gry" link "EkranGîówny"}
+
+                            @{"Okienko Koniec Gry" link "Zakoïczenie"}
+
+                           @{"Okienko konfiguracji" link "Konfig"}
+
+                            @{"Ogólny przebieg gry" link "Gra"}
+
+@ENDNODE
+
+@NODE "EkranGîówny"
+                         -=> Ekran gîówny gry <=-
+      __________________________    +--------------------+
+     |        |        |        |   | @{"Punkty:" link "Punkty"}            |
+     |        |        |        |   +--------------------+
+     |        |        |        |   +--------------------+
+     |________|________|________|   |     @{"Zakoïczenie" link "Zakoïczenie"}    |
+     |        |        |        |   +--------------------+
+     |        @{"ukîadanka" link "Ukîadanka"}         |   |     @{"Konfiguracja" link "Konfig"}   |
+     |        |        |        |   +--------------------+
+     |________|________|________|    ________     ________
+     |        |        |        |   |        |   |        |
+     |        |        |        |   |@{"fragment" link "Fragment"}|   |        |
+     |        |        |        |   |   1    |   |   2    |
+     |________|________|________|   |________|   |________|
+     |        |        |        |
+     |        |        |        |                 ________
+     |        |        |        |                |        |
+     |________|________|________|                |   3    |
+                +----------------------------+   |        |
+                |            @{"czas" link "Czas"}            |   |________|
+                +----------------------------+
+
+@ENDNODE
+
+@NODE "Punkty"
+
+    W tym miejscu wyôwietlane sâ punkty zdobyte przez gracza.
+  Ogólna punktacja:
+    -prawidîowo uîoûony fragment +5,
+    -úle uîoûony fragment -1,
+    -pauza -2,
+    -dodatkowy bonus zwiâzany z czasem w zakresie od +40 do +1,
+
+    Maksymalna iloôê punktów to 99999, minimalna -9999.
+@ENDNODE
+
+@NODE "Zakoïczenie"
+
+                           Okno zakoïczenia gry
+
+                          +--------------------+
+                          |       KONIEC       |
+                          +--------------------+
+                          | Twój wynik:        |
+                          +--------------------+
+                          |    @{"Nowe obrazki" link "NoweObrazki"}    |
+                          +--------------------+
+                          |  @{"Kontynuacja gry" link "Kontynuacja"}   |
+                          +--------------------+
+                          |      @{"Nowa gra" link "NowaGra"}      |
+                          +--------------------+
+                          |      @{"Wyjôcie" link "Wyjôcie"}       |
+                          +--------------------+
+
+@ENDNODE
+@NODE "NoweObrazki"
+                            gadget Nowe obrazki
+        Gadget ten powoduje wczytanie nowej "porcji" obrazków.
+    Jest on aktywny tylko wówczas jeûeli dostëpna pamiëê CHIP
+    jest za maîa aby  wczytaê wszystkie obrazki "na raz".
+
+@ENDNODE
+@NODE "Kontynuacja"
+
+                            gadget Kontynuacja
+        Gadget umoûliwia kontynuowanie gry bez zerowania licznika punktów.
+    Po jego wybraniu przechodzimy do losowania obrazka.
+
+@ENDNODE
+@NODE "NowaGra"
+                              gadget Nowa gra
+        Skutki naciôniëcia tego gadgetu sâ analogiczne jak przy gadget'cie
+    @{"Kontynuacja" link "Kontynuacja"}, jedynâ róûnicâ jest zerowanie licznika punktów.
+    Po wybraniu gadgetu otworzy sië okno z najlepszymi wynikami.
+@ENDNODE
+@NODE "Wyjôcie"
+                              gadget Wyjôcie
+        To chyba jest oczywiste.
+@ENDNODE
+
+
+@NODE "Konfig"
+
+                           Okno konfiguracji gry
+
+                 +-------------------+------------------+
+                 |         _         |       Okno       |
+                 |        |_|        |   konfiguracji   |
+                 | @{"poîoûenie ekranu" link "PoîoûenieEkranu"}  |       gry        |
+                 |                   |                  |
+                 |-------------------+------------------|
+                 | @{"tempo zmiany obrazków:" link "ZmianaObrazków"}               |
+                 |                 min -----|------ max |
+                 | @{"moment odsîony caîego obrazka:" link "Odsîona"}       |
+                 |                 min -----|------ max |
+                 | @{"tempo przesuwania fragmentów:" link "Przesuwanie"}        |
+                 |                 min -----|------ max |
+                 | @{"czas trwania gry:" link "CzasGry"}                    |
+                 |                 min -----|------ max |
+                 +-------------+----------+-------------+
+                 |  @{"Nagranie" link "NagranieKonfig"}   |    OK    |  Rezygnacja |
+                 +-------------+----------+-------------+
+
+
+@ENDNODE
+
+@NODE "PoîoûenieEkranu"
+
+                             Poîoûenie ekranu
+
+        Gadget pozwala na przesuwanie caîego ekranu (tak jak w
+    preferencjach systemowych); pozwala to dopasowanie ustawienia
+    ekranu dla posiadanego monitora.
+
+@ENDNODE
+@NODE "ZmianaObrazków"
+
+                           tempo zmiany obrazków
+
+        Ten poziomy gadget umoûliwia ustawienie szybkoôci zmian caîych obrazków,
+    w momencie losowania. Jeûeli ustawisz odpowiednio niskâ szybkoôê moûesz wybraê
+    który obrazek chcesz ukîadaê.
+
+@ENDNODE
+@NODE "Odsîona"
+
+                       moment odsîony caîego obrazka
+
+        Tutaj moûesz zmieniê przez jaki pokazuje ci sië caîy obrazek,
+    juû po jego wylosowaniu.
+
+
+@ENDNODE
+@NODE "Przesuwanie"
+
+                       tempo przesuwania fragmentów
+
+      Ustawiajâc ten gadget zmieniasz prëdkoôê przesuwania sië @{"fragmentów" link "Fragment"}
+
+@ENDNODE
+@NODE "CzasGry"
+                             czas trwania gry
+
+        Tu moûesz ustawiê ile czasu bëdziesz miaî na uîoûenie obrazka.
+    ( od 20 sekund, do 3 minut ). Czas gry ma wpîyw na dodatkowe punkty
+    po uîoûeniu caîego obrazka ( krótszy czas - wiëcej punktów ).
+
+@ENDNODE
+@NODE "NagranieKonfig"
+                           nagranie konfiguracji
+
+        Ustawionâ konfiguracjë moûesz zgraê na dyksk.
+    UWAGA!! W stacji musi znajdowaê sië ODBEZPIECZONA dyskietka.
+    Konfiguracja nagrywana jest do urzâdzenia S: pod nazwâ Puzzle.config
+
+@ENDNODE
+
+@NODE "Ukîadanka"
+                                 ukîadanka
+
+        Na tym polu znajduje sië dwanaôcie gadgetów, za ich pomocâ
+    ukîadasz obrazek. Kolejne @{"fragmenty" link "Fragment"} ukîadanki przesuwajâ sië w
+    polach 3->2->1. Jeûeli wiesz w którym miejscu ukîadanki znajduje
+    sië @{"fragment" link "Fragment"} który jest w polu 1, poprostu klikasz na jeden z
+    dwunastu gadget'ów.
+        Jeûeli podczas gry wciôniesz prawy klawisz myszy, otworzy
+    sië dodatkowe okno - Pauza -. W tym momencie @{"fragmenty" link "Fragment"}
+    przestajâ sië przesuwaê w polach 3,2,1 - masz 10 sekund na
+    wybranie jednego z dwunastu gadgetów pod którym ukryty jest
+    @{"fragment" link "Fragment"} z pola 1
+
+    zobacz takûe: @{"ekran gîówny gry" link "EkranGîówny"}
+
+@ENDNODE
+
+@NODE "Fragment"
+
+                                 fragment
+
+        W tych trzech polach przesówajâ sië fragmenty obrazka przykryte
+    gadgetami, kolejnoôê tych fragmentów jest losowa, jednak zawsze
+    przesuwajâ sië do pola trzeciego przez drugie na pierwsze.
+      Fragment z pola pierwszego jest tym ktory masz prawidîowo odkryê.
+
+    zobacz takûe: @{"ukîadanka" link "Ukîadanka"}
+    zobacz takûe: @{"ekran gîówny gry" link "EkranGîówny"}
+
+
+@ENDNODE
+@NODE "Czas"
+                                   czas
+
+        W tym miejscu znajduje sië belka pokazujâca ile jeszcze zostaîo
+    czasu na uîoûenie caîego obrazka.
+
+@ENDNODE
+
+@NODE "Gra"
+                            Ogólny przebieg gry
+
+       Po uruchomieniu gry otwiera sië okno z zapisem Proszë poczekaj...
+    w tym czasie komputer wczytuje do pamieci obrazki z dysku ( z katalogu
+    Obrazki: ). Na raz wczytywana jest maksymalna iloôê obrazków jaka sië
+    zmieôci w chip'ie.
+       Gdy uda sië pomyôlnie zaîadowaê obrazki, komputer zaczyna losowanie,
+    obrazki zmieniajâ sië na ekranie, wybranie tego który akurat bëdziesz
+    ukîadaî dokonujesz wciskajâc lewy klawisz myszy. Po wybraniu obrazek
+    ukazuje sië w caîej okazaîoôci przez pewien czas (zobacz @{"konfiguracjë" link "Konfig"}).
+    Nastëpnie caîy obrazek zostaje zasîoniëty gadget'ami, pozostaje tylko
+    jeden nie zasîoniëty kawaîek. Tu zaczyna sië gra.
+        Kolejne @{"fragmenty" link "Fragment"} przesuwajâ sië w trzech polach, a twoim zadaniem
+    jest decyzja gdzie jest dany fragment i wciôniëcie jednego z gadgetów
+    na polu @{"ukîadanki" link "Ukîadanka"}.
+        W dowolnym momencie gry moûesz wcisnâê gadgety:
+    @{"Zakoïczenie" link "Zakoïczenie"} oraz @{"Konfiguracja" link "Konfig"}
+
+    zobacz takûe: @{"ekran gîówny gry" link "EkranGîówny"}
+
+@ENDNODE

@@ -1,7 +1,7 @@
 
 ## Puzzland for Amiga
 
-Welcome to the source code repository for **Puzzland**, a classic puzzle game originally developed for the Amiga platform. This repository contains the source code and disk image for Puzzland, a game I created during my early days as a programmer.
+This repository contains the source code and disk image for **[Puzzland](https://amiga.abime.net/games/view/puzzland)**, a game I created on my Amiga during my early days as a programmer.
 
 ### About the Game
 

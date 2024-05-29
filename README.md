@@ -29,3 +29,6 @@ To be honest, I don’t have any idea how to build the game using modern systems
 ### Reflecting on the Journey
 
 Creating Puzzland was a significant milestone in my programming career. Reconnecting with this project has reminded me of the evolution of technology and my enduring passion for software development. While the code may be a relic of its time, it represents the foundation of my journey as a programmer. 
+
+I wrote more about this journey [on my blog](https://owsianski.com/posts/the-unexpected-trip-down-memory-lane/).
+
